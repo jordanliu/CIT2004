@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -26,7 +27,7 @@ public class LoginController implements Initializable {
     @FXML
     private Label errorMessage;
 
-//add validation
+
     public void login(ActionEvent event) throws Exception {
            if (usernameField.getText().equals("user") && passwordField.getText().equals("pass")) {
                ((Node) (event.getSource())).getScene().getWindow().hide();
@@ -50,6 +51,7 @@ public class LoginController implements Initializable {
                    Parent root = FXMLLoader.load(getClass().getResource("fxml/student.fxml"));
                    primaryStage.setScene(new Scene(root, 600, 400));
                }
+               primaryStage.getIcons().add(new Image("hai/file/icon.png"));
                primaryStage.setTitle("HaiOnline");
                primaryStage.setResizable(false);
                primaryStage.show();
@@ -102,7 +104,6 @@ public class LoginController implements Initializable {
     }
  */
 
-   //add string in arguments
 
 
 
