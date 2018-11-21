@@ -1,8 +1,11 @@
 package hai;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,21 +14,22 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController {
+
+public class LoginController implements Initializable {
     @FXML
     private TextField usernameField;
 
     @FXML
     private PasswordField passwordField;
 
-    @FXML
-    private ComboBox userType;
+
 
     //add combobox code
-    public void login(ActionEvent event) throws Exception{
+    public void login(ActionEvent event) throws Exception {
         if (usernameField.getText().equals("user") && passwordField.getText().equals("pass")) {
-            System.out.println("Login");
 
             ((Node) (event.getSource())).getScene().getWindow().hide();
             Stage primaryStage = new Stage();
@@ -34,13 +38,26 @@ public class LoginController {
             primaryStage.setScene(new Scene(root, 600, 400));
             primaryStage.setResizable(false);
             primaryStage.show();
+            System.out.println(userType.getValue());
+
         } else {
             System.out.println("Fail");
-            }
         }
+    }
 
+    @FXML
+    public ComboBox<String> userType;
 
-   /* public User getLoggedUser() {
+    ObservableList<String> list  = FXCollections.observableArrayList("Student", "Staff");
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        userType.setItems(list);
+    }
+}
+
+   /*
+    public User getLoggedUser() {
         return loggedUser;
     }
 
@@ -66,9 +83,9 @@ public class LoginController {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+ */
 
-        //add string in arguments
-    /**/
-    }
+   //add string in arguments
+
 
 
