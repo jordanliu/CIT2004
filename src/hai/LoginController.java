@@ -9,9 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -25,31 +23,42 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField passwordField;
 
+    @FXML
+    private Label errorMessage;
 
-
-    //add combobox code
+//add validation
     public void login(ActionEvent event) throws Exception {
-        if (usernameField.getText().equals("user") && passwordField.getText().equals("pass")) {
+           if (usernameField.getText().equals("user") && passwordField.getText().equals("pass")) {
+               ((Node) (event.getSource())).getScene().getWindow().hide();
+               Stage primaryStage = new Stage();
+               String UserType = userType.getValue();
 
-            ((Node) (event.getSource())).getScene().getWindow().hide();
-            Stage primaryStage = new Stage();
-            String UserType = userType.getValue();
-            if (UserType == "Staff"){
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/staff.fxml"));
-                primaryStage.setScene(new Scene(root, 600, 400));
-            } else if (UserType == "Student"){
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/student.fxml"));
-                primaryStage.setScene(new Scene(root, 600, 400));
-            }
+               if (UserType == null){
+                   Alert alert = new Alert(Alert.AlertType.ERROR, "You need to select an account type (student/staff) from the drop down box.", ButtonType.OK);
+                   alert.showAndWait();
 
-            primaryStage.setTitle("HaiOnline");
-            primaryStage.setResizable(false);
-            primaryStage.show();
+                   if (alert.getResult() == ButtonType.OK) {
+                       Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
+                       primaryStage.setScene(new Scene(root, 600, 400));
+                   }
+               }
 
-        } else {
-            System.out.println("Fail");
-        }
-    }
+               if (UserType == "Staff"){
+                   Parent root = FXMLLoader.load(getClass().getResource("fxml/staff.fxml"));
+                   primaryStage.setScene(new Scene(root, 600, 400));
+               } else if (UserType == "Student"){
+                   Parent root = FXMLLoader.load(getClass().getResource("fxml/student.fxml"));
+                   primaryStage.setScene(new Scene(root, 600, 400));
+               }
+               primaryStage.setTitle("HaiOnline");
+               primaryStage.setResizable(false);
+               primaryStage.show();
+
+           } else {
+               errorMessage.setVisible(true);
+               errorMessage.setManaged(true);
+           }
+       }
 
     @FXML
     public ComboBox<String> userType;
@@ -59,6 +68,8 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userType.setItems(list);
+        errorMessage.setVisible(false);
+        errorMessage.setManaged(false);
     }
 }
 

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,9 +12,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hai.LoginController">
    <children>
-      <TextField fx:id="usernameField" layoutX="226.0" layoutY="154.0" promptText="username" />
+      <TextField fx:id="usernameField" layoutX="226.0" layoutY="159.0" promptText="username" />
       <PasswordField fx:id="passwordField" layoutX="226.0" layoutY="195.0" promptText="password" />
-      <Button layoutX="277.0" layoutY="267.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <Button defaultButton="true" layoutX="277.0" layoutY="267.0" mnemonicParsing="false" onAction="#login" text="Login" />
       <Text layoutX="121.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HaiOnline" textAlignment="CENTER" wrappingWidth="357.248046875">
          <font>
             <Font size="53.0" />
@@ -25,5 +26,6 @@
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="www.haionline.edu - version 1.0 (beta)" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
+      <Label fx:id="errorMessage" layoutX="201.0" layoutY="132.0" text="Incorrect credentials, please try again." textFill="RED" />
    </children>
 </AnchorPane>
