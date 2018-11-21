@@ -33,12 +33,18 @@ public class LoginController implements Initializable {
 
             ((Node) (event.getSource())).getScene().getWindow().hide();
             Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/student.fxml"));
+            String UserType = userType.getValue();
+            if (UserType == "Staff"){
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/staff.fxml"));
+                primaryStage.setScene(new Scene(root, 600, 400));
+            } else if (UserType == "Student"){
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/student.fxml"));
+                primaryStage.setScene(new Scene(root, 600, 400));
+            }
+
             primaryStage.setTitle("HaiOnline");
-            primaryStage.setScene(new Scene(root, 600, 400));
             primaryStage.setResizable(false);
             primaryStage.show();
-            System.out.println(userType.getValue());
 
         } else {
             System.out.println("Fail");
