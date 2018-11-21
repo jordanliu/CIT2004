@@ -11,10 +11,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 public class LoginController {
     @FXML
@@ -33,7 +29,7 @@ public class LoginController {
 
             ((Node) (event.getSource())).getScene().getWindow().hide();
             Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("student.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/student.fxml"));
             primaryStage.setTitle("HaiOnline");
             primaryStage.setScene(new Scene(root, 600, 400));
             primaryStage.setResizable(false);
