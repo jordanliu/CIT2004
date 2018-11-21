@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hai.StaffController">
    <children>
       <Accordion layoutX="117.0" layoutY="125.0" />
-      <Text layoutX="200.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HaiOnline: Set Test">
+      <Text layoutX="181.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HaiOnline: View Result">
          <font>
             <Font size="24.0" />
          </font>
