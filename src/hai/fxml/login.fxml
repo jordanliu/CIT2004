@@ -5,6 +5,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -19,5 +20,10 @@
          </font>
       </Text>
       <ComboBox fx:id="userType" layoutX="225.0" layoutY="232.0" prefWidth="150.0" promptText="Select account type" />
+      <BorderPane layoutY="349.0" prefHeight="51.0" prefWidth="629.0" style="-fx-background-color: #000000;">
+         <center>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="www.haionline.edu - version 1.0 (beta)" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
