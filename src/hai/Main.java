@@ -14,8 +14,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         primaryStage.getIcons().add(new Image("hai/file/icon.png"));
         Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
-        primaryStage.setTitle("HaiOnline");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setTitle("HAIOnline");
+        primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.setResizable(false);
         primaryStage.show();
     }

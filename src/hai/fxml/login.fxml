@@ -6,26 +6,49 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hai.LoginController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hai.LoginController">
    <children>
-      <TextField fx:id="usernameField" layoutX="226.0" layoutY="159.0" promptText="username" />
-      <PasswordField fx:id="passwordField" layoutX="226.0" layoutY="195.0" promptText="password" />
-      <Button defaultButton="true" layoutX="277.0" layoutY="267.0" mnemonicParsing="false" onAction="#login" text="Login" />
-      <Text layoutX="121.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HaiOnline" textAlignment="CENTER" wrappingWidth="357.248046875">
+      <TextField fx:id="usernameField" layoutX="492.0" layoutY="165.0" promptText="username" />
+      <PasswordField fx:id="passwordField" layoutX="492.0" layoutY="201.0" promptText="password" />
+      <Button layoutX="543.0" layoutY="273.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <ComboBox fx:id="userType" layoutX="491.0" layoutY="238.0" prefWidth="150.0" promptText="Select account type" />
+      <Label fx:id="errorMessage" layoutX="474.0" layoutY="307.0" text="Invalid credentials, please try again." textAlignment="CENTER" textFill="RED" />
+      <AnchorPane prefHeight="500.0" prefWidth="416.0" style="-fx-background-color: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);">
+         <children>
+            <Text fill="WHITE" layoutX="53.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HAIOnline" textAlignment="CENTER" wrappingWidth="309.13671875">
+               <font>
+                  <Font name="Roboto Black" size="63.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="53.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WWW.HAI.EDU" textAlignment="CENTER" wrappingWidth="309.13671875">
+               <font>
+                  <Font name="Roboto Black" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="53.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Home &amp; Away Institute " textAlignment="CENTER" wrappingWidth="309.13671875">
+               <font>
+                  <Font name="Roboto Medium" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="53.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2018 - Developed by HAIOD" textAlignment="CENTER" wrappingWidth="309.13671875">
+               <font>
+                  <Font name="Roboto Medium" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="161.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="version 1.0 (beta)" />
+         </children>
+      </AnchorPane>
+      <Text layoutX="511.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER" wrappingWidth="109.443359375">
          <font>
-            <Font size="53.0" />
+            <Font name="Roboto Bold" size="26.0" />
          </font>
       </Text>
-      <ComboBox fx:id="userType" layoutX="225.0" layoutY="232.0" prefWidth="150.0" promptText="Select account type" />
-      <BorderPane layoutY="349.0" prefHeight="51.0" prefWidth="629.0" style="-fx-background-color: #000000;">
-         <center>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="www.haionline.edu - version 1.0 (beta)" BorderPane.alignment="CENTER" />
-         </center>
-      </BorderPane>
-      <Label fx:id="errorMessage" layoutX="201.0" layoutY="132.0" text="Incorrect credentials, please try again." textFill="RED" />
+      <Label alignment="TOP_LEFT" layoutX="492.0" layoutY="338.0" prefHeight="141.0" prefWidth="150.0" text="If you have any issues logging in, please contact the administrator by sending an email to support@hai.edu" textAlignment="CENTER" wrapText="true" />
+      <Line endX="100.0" layoutX="566.0" layoutY="329.0" startX="-100.0" strokeWidth="0.5" />
+      <Line endX="100.0" layoutX="566.0" layoutY="152.0" startX="-100.0" strokeWidth="0.5" />
    </children>
 </AnchorPane>

@@ -64,19 +64,19 @@ public class LoginController implements Initializable {
 
                    if (alert.getResult() == ButtonType.OK) {
                        Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
-                       primaryStage.setScene(new Scene(root, 600, 400));
+                       primaryStage.setScene(new Scene(root, 700, 500));
                    }
                }
 
                if (UserType == "Staff"){
                    Parent root = FXMLLoader.load(getClass().getResource("fxml/staff.fxml"));
-                   primaryStage.setScene(new Scene(root, 600, 400));
+                   primaryStage.setScene(new Scene(root, 700, 500));
                } else if (UserType == "Student"){
                    Parent root = FXMLLoader.load(getClass().getResource("fxml/student.fxml"));
-                   primaryStage.setScene(new Scene(root, 600, 400));
+                   primaryStage.setScene(new Scene(root, 700, 500));
                }
                primaryStage.getIcons().add(new Image("hai/file/icon.png"));
-               primaryStage.setTitle("HaiOnline");
+               primaryStage.setTitle("HAIOnline");
                primaryStage.setResizable(false);
                primaryStage.show();
 
