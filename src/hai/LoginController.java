@@ -33,7 +33,9 @@ public class LoginController implements Initializable {
         String $username;
         String $password;
         Staff staffLogin = new Staff();
+        Student studentLogin = new Student();
         boolean result = false;
+
         if (UserType == "Staff"){
             $username = usernameField.getText();
             $password = passwordField.getText();
@@ -43,7 +45,13 @@ public class LoginController implements Initializable {
             //System.out.println($password);
             //System.out.println(result);
         } else if (UserType == "Student"){
+            $username = usernameField.getText();
+            $password = passwordField.getText();
 
+            result = studentLogin.validate($username, $password);
+            //System.out.println($username);
+            //System.out.println($password);
+            //System.out.println(result);
         }
            if (result) {
                ((Node) (event.getSource())).getScene().getWindow().hide();

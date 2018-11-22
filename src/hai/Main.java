@@ -29,7 +29,9 @@ public class Main extends Application {
         info.retrieve();
         //info.display();
 
-
+        User info1 = new Student(15067007, "shamari", "1234", "Shamari", "Cooper", "FENC", "SCIT", "11/12/2018");
+        //info1.store();
+        info1.retrieve();
 
         launch(args);
 
