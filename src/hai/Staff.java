@@ -75,6 +75,37 @@ public class Staff extends User{
        }
     }
 
+    public boolean validate(String $username, String $password){
+        int found = 0;
+        try{
+            Scanner sInFile = new Scanner(new File("staff.txt"));
+            while(sInFile.hasNext()){
+                id = sInFile.nextInt();
+                username = sInFile.next();
+                password = sInFile.next();
+                firstName = sInFile.next();
+                lastName = sInFile.next();
+                faculty = sInFile.next();
+                department = sInFile.next();
+                dateEmployed = sInFile.next();
+               // System.out.println("validate method: " + username + " " + password);
+                if($username.equals(username)){
+                    found = 1;
+                 //System.out.println("validate method:" + username);
+                    break;
+                }
+            }
+            sInFile.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        if (found == 1){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void retrieve(){
         try{
             Scanner sInFile = new Scanner(new File("staff.txt"));

@@ -32,13 +32,20 @@ public class LoginController implements Initializable {
         String UserType = userType.getValue();
         String $username;
         String $password;
+        Staff staffLogin = new Staff();
+        boolean result = false;
         if (UserType == "Staff"){
             $username = usernameField.getText();
+            $password = passwordField.getText();
 
+            result = staffLogin.validate($username, $password);
+            //System.out.println($username);
+            //System.out.println($password);
+            //System.out.println(result);
         } else if (UserType == "Student"){
 
         }
-           if (usernameField.getText().equals("user") && passwordField.getText().equals("pass")) {
+           if (result) {
                ((Node) (event.getSource())).getScene().getWindow().hide();
                Stage primaryStage = new Stage();
 
