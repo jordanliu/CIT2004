@@ -29,10 +29,19 @@ public class LoginController implements Initializable {
 
 
     public void login(ActionEvent event) throws Exception {
+        String UserType = userType.getValue();
+        String $username;
+        String $password;
+        if (UserType == "Staff"){
+            $username = usernameField.getText();
+
+        } else if (UserType == "Student"){
+
+        }
            if (usernameField.getText().equals("user") && passwordField.getText().equals("pass")) {
                ((Node) (event.getSource())).getScene().getWindow().hide();
                Stage primaryStage = new Stage();
-               String UserType = userType.getValue();
+
 
                if (UserType == null){
                    Alert alert = new Alert(Alert.AlertType.ERROR, "You need to select an account type (student/staff) from the drop down box.", ButtonType.OK);

@@ -1,8 +1,7 @@
 package hai;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
+import java.util.Scanner;
 
 public class Staff extends User{
     private String faculty;
@@ -63,49 +62,38 @@ public class Staff extends User{
                 + faculty + "\n" + "Department: " + department + "\n" + "Date Employed: " + dateEmployed +  "\n";
     }
 
-    @Override
-    public void store(String filename) {
-        try {
-            RandomAccessFile file = new RandomAccessFile(new File(filename), "rw");
-            file.seek((id - 1) * getRecordSize());
-            file.writeUTF(username);
-            file.writeUTF(password);
-            file.writeUTF(firstName);
-            file.writeUTF(lastName);
-            file.writeUTF(faculty);
-            file.writeUTF(department);
-            file.writeUTF(dateEmployed);
-            file.close();
-        } catch (IOException io) {
-            System.err.println(io.getMessage());
+    public void store(){
+       try{
+           FileWriter file = new FileWriter("staff.txt", true);
+           Staff staff = new Staff();
+           String record = id + "\n"  + username +  "\n"  + password + "\n" + firstName + "\n" + lastName +
+                   "\n" + faculty + "\n" + department + "\n" + dateEmployed;
+           file.write(record);
+           file.close();
+       } catch (IOException e){
+            e.printStackTrace();
+       }
+    }
+
+    public void retrieve(){
+        try{
+            Scanner sInFile = new Scanner(new File("staff.txt"));
+            int id;
+            while(sInFile.hasNext()){
+                id = sInFile.nextInt();
+                username = sInFile.next();
+                password = sInFile.next();
+                firstName = sInFile.next();
+                lastName = sInFile.next();
+                faculty = sInFile.next();
+                department = sInFile.next();
+                dateEmployed = sInFile.next();
+                Staff rec = new Staff(id, username, password, firstName, lastName, faculty, department, dateEmployed);
+                System.out.println(rec);
+            }
+            sInFile.close();
+        } catch (IOException e){
+            e.printStackTrace();
         }
     }
-
-
-
-    @Override
-    public void retrieve(String filename, int id) {
-        try {
-            RandomAccessFile file = new RandomAccessFile(new File(filename),
-                    "rw");
-            file.seek((id - 1) * getRecordSize());
-            this.id = file.readInt();
-            username = file.readUTF();
-            password = file.readUTF();
-            firstName = file.readUTF();
-            lastName = file.readUTF();
-            faculty = file.readUTF();
-            department = file.readUTF();
-            dateEmployed = file.readUTF();
-            file.close();
-        } catch (IOException io) {
-            System.err.println(io.getMessage());
-        }
-    }
-
-
-    private long getRecordSize() {
-        return (long) (4 + ((11 + 25 + 25 + 25 + 50) * 2));
-    }
-
 }

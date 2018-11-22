@@ -3,7 +3,7 @@ package hai;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-public abstract class User {
+public class User {
 
     protected int id;
     protected String username;
@@ -84,6 +84,10 @@ public abstract class User {
         System.out.println(this);
     }
 
-    public abstract void store(String filename);
-    public abstract void retrieve(String filename, int id);
+    public  void store(){
+
+    }
+    public  void retrieve(){
+
+    }
 }

@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+
 public class Main extends Application {
 
     @Override
@@ -24,8 +25,9 @@ public class Main extends Application {
         User info;
         info = new Staff(1, "jordan", "1234", "Jordan", "Liu", "FENC", "SCIT", "11/12/2018");
         System.out.println("Staff Details:");
-        info.display();
-        info.store("staff.dat");
+        //info.store();
+        info.retrieve();
+        //info.display();
 
 
 
