@@ -5,7 +5,9 @@ public class Student {
     private String contact;
     private Date dateEnrolled;
 
-    //default constructor
+    public Student(){
+
+    }
 
     public Student(String address, String contact, Date dateEnrolled) {
         this.address = address;

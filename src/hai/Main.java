@@ -21,6 +21,20 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        User info;
+        info = new Staff(1, "jordan", "1234", "Jordan", "Liu", "FENC", "SCIT", "11/12/2018");
+        System.out.println("Staff Details:");
+        info.display();
+        info.store("staff.dat");
+
+
+
         launch(args);
+
+
+
+
+
+
     }
 }
