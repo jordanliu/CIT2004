@@ -1,5 +1,6 @@
 package hai;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,5 +26,14 @@ public class StaffController {
 
     public void viewTest(){
         System.out.println("View Test");
+    }
+
+    public void exit(ActionEvent event){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you would like to exit?", ButtonType.YES, ButtonType.NO);
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES) {
+            System.out.println("Exit");
+        }
     }
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hai.LoginController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hai.LoginController">
    <children>
       <TextField fx:id="usernameField" layoutX="492.0" layoutY="165.0" promptText="username" />
       <PasswordField fx:id="passwordField" layoutX="492.0" layoutY="201.0" promptText="password" />
@@ -19,9 +19,9 @@
       <Label fx:id="errorMessage" layoutX="474.0" layoutY="307.0" text="Invalid credentials, please try again." textAlignment="CENTER" textFill="RED" />
       <AnchorPane prefHeight="500.0" prefWidth="416.0" style="-fx-background-color: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);">
          <children>
-            <Text fill="WHITE" layoutX="53.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HAIOnline" textAlignment="CENTER" wrappingWidth="309.13671875">
+            <Text fill="WHITE" layoutX="53.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HAIOnline" textAlignment="CENTER" wrappingWidth="309.13671875">
                <font>
-                  <Font name="Roboto Black" size="63.0" />
+                  <Font size="62.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="53.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WWW.HAI.EDU" textAlignment="CENTER" wrappingWidth="309.13671875">
