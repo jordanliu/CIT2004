@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hai.StudentController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hai.StudentController">
    <stylesheets>
    <URL value="@style.css" />
    </stylesheets>
@@ -31,6 +31,6 @@
          </font>
       </Button>
       <Button layoutX="277.0" layoutY="178.0" mnemonicParsing="false" prefHeight="147.0" prefWidth="157.0" styleClass="home_button" text="Take Test" />
-      <Button layoutX="483.0" layoutY="178.0" mnemonicParsing="false" prefHeight="147.0" prefWidth="157.0" styleClass="home_button" text="Exit" />
+      <Button fx:id="exitButton" layoutX="483.0" layoutY="178.0" mnemonicParsing="false" onAction="#exit" prefHeight="147.0" prefWidth="157.0" styleClass="home_button" text="Exit" />
    </children>
 </AnchorPane>
