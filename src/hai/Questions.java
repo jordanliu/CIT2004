@@ -4,21 +4,26 @@ import java.io.Serializable;
 
 
     public class Questions implements Serializable {
-        String userPromt;
+        String question;
         String answer;
+
+        public Questions(){
+            question = "";
+            answer = "";
+        }
 
         public Questions(String userPromt, String answer){
 
             this.answer = answer;
-            this.userPromt = userPromt;
+            this.question = userPromt;
         }
 
-        public String getUserPromt() {
-            return userPromt;
+        public String getQuestion() {
+            return question;
         }
 
-        public void setUserPromt(String userPromt) {
-            this.userPromt = userPromt;
+        public void setQuestion(String question) {
+            this.question = question;
         }
 
         public String getAnswer() {

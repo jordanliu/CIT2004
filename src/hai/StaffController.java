@@ -32,6 +32,7 @@ public class StaffController {
         primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.setResizable(false);
         primaryStage.show();
+
     }
 
     public void viewTest(){

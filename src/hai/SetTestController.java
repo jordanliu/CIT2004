@@ -47,12 +47,16 @@ public class SetTestController implements Initializable {
         String fileName = CourseList +"-"+ testDate.getText() +".txt";
 
 
+        QuestionDatabank questionDatabank = new QuestionDatabank();
+        questionDatabank.init();
+        questionDatabank.create(fileName);
+
 
     }
 
 
     public void cancel(ActionEvent event) throws Exception{
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you would like to cancel?", ButtonType.YES, ButtonType.NO);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you would like to exit?", ButtonType.YES, ButtonType.NO);
         alert.showAndWait();
 
         if (alert.getResult() == ButtonType.YES) {

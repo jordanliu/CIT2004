@@ -24,21 +24,23 @@ public class Main extends Application {
     public static void main(String[] args) {
         User info;
         info = new Staff(1, "jordan", "1234", "Jordan", "Liu", "FENC", "SCIT", "11/12/2018");
-        System.out.println("Staff Details:");
-        //info.store();
-        info.retrieve();
-        //info.display();
-
         User info1 = new Student(15067007, "shamari", "1234", "Shamari", "Cooper", "FENC", "SCIT", "11/12/2018");
-        //info1.store();
-        info1.retrieve();
+
+        /*Uncomment store(obj, obj) if this is your first time launching without the files (staff.txt, student.txt)*/
+        //store(info, info1);
+        retrieve(info, info1);
 
         launch(args);
 
-        //dadada
+    }
 
+    public static void store(User obj, User obj1){
+        obj.store();
+        obj1.store();
+    }
 
-
-
+    public static void retrieve(User obj, User obj1){
+        obj.retrieve();
+        obj1.retrieve();
     }
 }
