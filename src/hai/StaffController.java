@@ -22,12 +22,21 @@ public class StaffController {
     private Button viewButton;
 
 
-    public void setTest(){
-        System.out.println("Set Test");
+
+    public void setTest(ActionEvent event) throws Exception{
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Stage primaryStage = new Stage();
+        primaryStage.getIcons().add(new Image("hai/file/icon.png"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/setTest.fxml"));
+        primaryStage.setTitle("HAIOnline");
+        primaryStage.setScene(new Scene(root, 700, 500));
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 
     public void viewTest(){
-        System.out.println("View Test");
+
+
     }
 
     public void exit(ActionEvent event) throws Exception{
