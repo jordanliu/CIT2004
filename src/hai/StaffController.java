@@ -11,8 +11,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.control.*;
 
-import java.awt.*;
-
 public class StaffController {
 
     @FXML
@@ -35,9 +33,15 @@ public class StaffController {
 
     }
 
-    public void viewTest(){
-
-
+    public void viewGradeStaff(ActionEvent event) throws Exception{
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Stage primaryStage = new Stage();
+        primaryStage.getIcons().add(new Image("hai/file/icon.png"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/viewGradeStaff.fxml"));
+        primaryStage.setTitle("HAIOnline");
+        primaryStage.setScene(new Scene(root, 700, 500));
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 
     public void exit(ActionEvent event) throws Exception{

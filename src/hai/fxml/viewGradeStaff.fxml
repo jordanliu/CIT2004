@@ -32,12 +32,14 @@
             <Font size="21.0" />
          </font>
       </Text>
-      <Button layoutX="598.0" layoutY="445.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="58.0" text="Exit" />
+      <Button layoutX="598.0" layoutY="445.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="58.0" text="Exit" />
       <TableView layoutX="33.0" layoutY="150.0" prefHeight="279.0" prefWidth="634.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="C2" />
-            <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="resultID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="resultFirstName" prefWidth="75.0" text="First Name" />
+            <TableColumn fx:id="resultLastName" prefWidth="75.0" text="Last Name" />
+            <TableColumn fx:id="resultlFaculty" prefWidth="75.0" text="Faculty" />
+            <TableColumn fx:id="resultGrade" prefWidth="75.0" text="Grade" />
         </columns>
       </TableView>
    </children>

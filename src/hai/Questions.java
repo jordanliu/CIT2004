@@ -12,10 +12,10 @@ import java.io.Serializable;
             answer = "";
         }
 
-        public Questions(String userPromt, String answer){
+        public Questions(String question, String answer){
 
             this.answer = answer;
-            this.question = userPromt;
+            this.question = question;
         }
 
         public String getQuestion() {

@@ -49,7 +49,7 @@ public class SetTestController implements Initializable {
 
         QuestionDatabank questionDatabank = new QuestionDatabank();
         questionDatabank.init();
-        questionDatabank.create(fileName);
+        questionDatabank.create();
 
 
     }

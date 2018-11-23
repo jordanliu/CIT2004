@@ -25,7 +25,7 @@
             </Text>
          </children>
       </AnchorPane>
-      <Button layoutX="75.0" layoutY="178.0" mnemonicParsing="false" prefHeight="147.0" prefWidth="157.0" styleClass="home_button" text="View Test Results" textFill="WHITE">
+      <Button fx:id="test" layoutX="75.0" layoutY="178.0" mnemonicParsing="false" onAction="#viewGradeStaff" prefHeight="147.0" prefWidth="157.0" styleClass="home_button" text="View Test Results" textFill="WHITE">
          <font>
             <Font name="Roboto Bold" size="14.0" />
          </font>

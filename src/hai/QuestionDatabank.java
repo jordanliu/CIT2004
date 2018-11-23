@@ -62,14 +62,14 @@ public class QuestionDatabank extends Questions {
        }
    }
 
-    public void create(String fileName){
+    public void create(){
        Random rand = new Random();
 
        int n = rand.nextInt(5) + 1;
 
      try{
          FileInputStream is = new FileInputStream("databank.ser");
-         FileOutputStream iis = new FileOutputStream(new File(fileName));
+         FileOutputStream iis = new FileOutputStream("generatedTest.ser");
          ObjectInputStream ois = new ObjectInputStream(is);
          ObjectOutputStream oos = new ObjectOutputStream(iis);
 
@@ -77,8 +77,9 @@ public class QuestionDatabank extends Questions {
          for(Questions x: questionArray){
              x = (Questions) ois.readObject();
              oos.writeObject(x);
-             System.out.println("\nQuestion: "+x.getQuestion() + " \nAnswer: " + x.getAnswer());
+             System.out.println("\nQuestion: " + x.getQuestion() + " \nAnswer: " + x.getAnswer());
          }
+
          ois.close();
 
      } catch (Exception e){
