@@ -36,7 +36,7 @@ public class LoginController implements Initializable {
         Student studentLogin = new Student();
         boolean result = false;
 
-        if (UserType.equals("Staff")){
+        if (UserType == "Staff"){
             $username = usernameField.getText();
             $password = passwordField.getText();
 
@@ -44,7 +44,7 @@ public class LoginController implements Initializable {
             //System.out.println($username);
             //System.out.println($password);
             //System.out.println(result);
-        } else if (UserType.equals("Student")){
+        } else if (UserType =="Student"){
             $username = usernameField.getText();
             $password = passwordField.getText();
 
@@ -68,10 +68,10 @@ public class LoginController implements Initializable {
                    }
                }
 
-               if (UserType.equals("Staff")){
+               if (UserType == "Staff"){
                    Parent root = FXMLLoader.load(getClass().getResource("fxml/staff.fxml"));
                    primaryStage.setScene(new Scene(root, 700, 500));
-               } else if (UserType.equals("Student")){
+               } else if (UserType == "Student"){
                    Parent root = FXMLLoader.load(getClass().getResource("fxml/student.fxml"));
                    primaryStage.setScene(new Scene(root, 700, 500));
                }

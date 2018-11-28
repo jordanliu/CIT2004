@@ -1,5 +1,7 @@
 package hai;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +20,9 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SetTestController{
@@ -33,8 +38,47 @@ public class SetTestController{
     public void setTest(ActionEvent event){
         String fileName = idNumber.getText() + "-" + courseName.getText() + "-" + courseCode.getText() + "-" + testDate.getText() +".json";
         System.out.println(fileName);
+        deserializableJson(fileName);
     }
 
+
+    public static void deserializableJson(String filename) {
+        Gson gson = new Gson();
+
+        try{
+            Questions[] arrayOne = new Questions[5];
+            Questions[] randomQuestions = gson.fromJson(new FileReader("questions.json"), Questions[].class);
+            System.out.println(gson.toJson(randomQuestions));
+
+            int[] numbers = new int[5];
+            for(int i = 0; i < numbers.length; i++) {
+                numbers[i] = (int)(Math.random()*11 + 0);
+                System.out.println(randomQuestions[numbers[i]].getQuestion() +" "+ randomQuestions[numbers[i]].getAnswer());
+            }
+            System.out.println("Random numbers generated:  " + Arrays.toString(numbers));
+
+
+            ArrayList<Questions> allItems = new ArrayList<>();
+            allItems.add(new Questions(randomQuestions[numbers[0]].getQuestion(), randomQuestions[numbers[0]].getAnswer()));
+            allItems.add(new Questions(randomQuestions[numbers[1]].getQuestion(), randomQuestions[numbers[1]].getAnswer()));
+            allItems.add(new Questions(randomQuestions[numbers[2]].getQuestion(), randomQuestions[numbers[2]].getAnswer()));
+            allItems.add(new Questions(randomQuestions[numbers[3]].getQuestion(), randomQuestions[numbers[3]].getAnswer()));
+            allItems.add(new Questions(randomQuestions[numbers[4]].getQuestion(), randomQuestions[numbers[4]].getAnswer()));
+
+            for (Questions q : allItems) {
+                System.out.println(q);
+            }
+
+                Gson gson1 = new Gson();
+                String jsonString = gson1.toJson(allItems);
+                FileWriter fileWriter = new FileWriter(filename);
+                fileWriter.write(jsonString);
+                fileWriter.close();
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     public void cancel(ActionEvent event) throws Exception{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you would like to exit?", ButtonType.YES, ButtonType.NO);

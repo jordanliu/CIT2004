@@ -45,5 +45,9 @@ public class Questions implements Serializable {
             this.answer = answer;
         }
 
+    public String toString() {
+        return question + " " + answer;
+    }
+
 }
 

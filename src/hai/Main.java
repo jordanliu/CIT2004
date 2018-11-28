@@ -40,30 +40,11 @@ public class Main extends Application {
         /*Uncomment store(obj, obj) if this is your first time launching without the files (staff.txt, student.txt)*/
         //store(info, info1);
         retrieve(info, info1);
-        deserializableJson();
+        //deserializableJson();
         launch(args);
 
     }
 
-    public static void deserializableJson() {
-        Gson gson = new Gson();
-
-        try{
-            Questions[] randomQuestions = gson.fromJson(new FileReader("questions.json"), Questions[].class);
-            System.out.println(gson.toJson(randomQuestions));
-
-            int[] numbers = new int[5];
-            for(int i = 0; i < numbers.length; i++) {
-                numbers[i] = (int)(Math.random()*12 + 1);
-                System.out.println(randomQuestions[numbers[i]].getQuestion() +" "+ randomQuestions[numbers[i]].getAnswer());
-            }
-            System.out.println("Question number: " + Arrays.toString(numbers));
-
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 
     public static void store(User obj, User obj1){
         obj.store();
