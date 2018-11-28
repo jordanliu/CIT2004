@@ -1,6 +1,8 @@
 package hai;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +13,8 @@ import javafx.stage.Stage;
 /*
 * TODO: ADD DEFAULT LOGINS FOR STAFF AND STUDENT
  */
-import static hai.Staff.serializableJson;
+import java.io.*;
+import java.util.ArrayList;
 
 
 public class Main extends Application {
@@ -35,9 +38,20 @@ public class Main extends Application {
         /*Uncomment store(obj, obj) if this is your first time launching without the files (staff.txt, student.txt)*/
         //store(info, info1);
         retrieve(info, info1);
-        serializableJson();
+        deserializableJson();
         launch(args);
 
+    }
+
+    public static void deserializableJson() {
+        Gson gson = new Gson();
+        try{
+            Questions[] myTypes = gson.fromJson(new FileReader("questions.json"), Questions[].class);
+            System.out.println(gson.toJson(myTypes));
+            System.out.println(myTypes[0].getAnswer());;
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public static void store(User obj, User obj1){

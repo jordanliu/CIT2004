@@ -20,7 +20,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SetTestController implements Initializable {
+public class SetTestController  {
     @FXML
     private TextField courseName;
 
@@ -35,7 +35,7 @@ public class SetTestController implements Initializable {
     @FXML
     public ComboBox<String> courseList;
 
-    ObservableList<String> list  = FXCollections.observableArrayList("Math", "English", "Law");
+   /*ObservableList<String> list  = FXCollections.observableArrayList("Math", "English", "Law");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -70,6 +70,7 @@ public class SetTestController implements Initializable {
             primaryStage.show();
         }
     }
+    */
     }
 
 

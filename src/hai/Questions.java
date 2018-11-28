@@ -1,14 +1,26 @@
 package hai;
 
-import java.io.Serializable;
+import com.google.gson.*;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-    public class Questions implements Serializable {
-        String question;
-        String answer;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
-        public Questions(){
+public class Questions implements Serializable {
+    @SerializedName("question")
+    @Expose
+    String question;
+    @SerializedName("answer")
+    @Expose
+    String answer;
+    ArrayList<QuestionDatabank> items;
+
+    public Questions(){
             question = "";
             answer = "";
+
         }
 
         public Questions(String question, String answer){
@@ -32,5 +44,6 @@ import java.io.Serializable;
         public void setAnswer(String answer) {
             this.answer = answer;
         }
-    }
+
+}
 

@@ -1,8 +1,16 @@
 package hai;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 
 import java.io.*;
+import java.lang.reflect.Type;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Staff extends User{
@@ -129,31 +137,5 @@ public class Staff extends User{
             e.printStackTrace();
         }
     }
-
-    public static void serializableJson(){
-        Questions[] questions = new Questions[2];
-        questions[0] = new Questions("test", "test");
-        questions[1] = new Questions("test", "test");
-
-       try{
-           Gson gson = new Gson();
-           String json = gson.toJson(questions);
-           System.out.println(json);
-           File jsonFile = new File("questions.json");
-           jsonFile.createNewFile();
-           FileOutputStream fOut = new FileOutputStream(jsonFile);
-           OutputStreamWriter jsonWriter =new OutputStreamWriter(fOut);
-           jsonWriter.append(json);
-           jsonWriter.close();
-           fOut.close();
-       } catch (IOException e){
-           e.printStackTrace();
-       }
-
-    }
-
-    public static void deserializableJson(){
-        String inputJson = "{'question':'null','answer':'null'}"; }
-        //Gson gson = new
 
 }
