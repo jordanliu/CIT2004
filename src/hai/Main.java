@@ -48,7 +48,9 @@ public class Main extends Application {
         try{
             Questions[] myTypes = gson.fromJson(new FileReader("questions.json"), Questions[].class);
             System.out.println(gson.toJson(myTypes));
-            System.out.println(myTypes[0].getAnswer());;
+
+            for(Questions x: myTypes)
+            System.out.println(x.getQuestion() +" "+ x.getAnswer());
         } catch (Exception e){
             e.printStackTrace();
         }
