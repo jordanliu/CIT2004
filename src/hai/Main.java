@@ -12,9 +12,11 @@ import javafx.stage.Stage;
 
 /*
 * TODO: ADD DEFAULT LOGINS FOR STAFF AND STUDENT
+* TODO: Add master user and pass in documentation
  */
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Main extends Application {
@@ -45,12 +47,19 @@ public class Main extends Application {
 
     public static void deserializableJson() {
         Gson gson = new Gson();
-        try{
-            Questions[] myTypes = gson.fromJson(new FileReader("questions.json"), Questions[].class);
-            System.out.println(gson.toJson(myTypes));
 
-            for(Questions x: myTypes)
-            System.out.println(x.getQuestion() +" "+ x.getAnswer());
+        try{
+            Questions[] randomQuestions = gson.fromJson(new FileReader("questions.json"), Questions[].class);
+            System.out.println(gson.toJson(randomQuestions));
+
+            int[] numbers = new int[5];
+            for(int i = 0; i < numbers.length; i++) {
+                numbers[i] = (int)(Math.random()*12 + 1);
+                System.out.println(randomQuestions[numbers[i]].getQuestion() +" "+ randomQuestions[numbers[i]].getAnswer());
+            }
+            System.out.println("Question number: " + Arrays.toString(numbers));
+
+
         } catch (Exception e){
             e.printStackTrace();
         }

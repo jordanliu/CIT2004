@@ -20,38 +20,19 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SetTestController  {
+public class SetTestController{
+    @FXML
+    private TextField idNumber;
     @FXML
     private TextField courseName;
-
     @FXML
     private TextField courseCode;
-
     @FXML
     private TextField testDate;
 
-
-
-    @FXML
-    public ComboBox<String> courseList;
-
-   /*ObservableList<String> list  = FXCollections.observableArrayList("Math", "English", "Law");
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        courseList.setItems(list);
-    }
-
     public void setTest(ActionEvent event){
-        String CourseList = courseList.getValue();
-        String fileName = CourseList +"-"+ testDate.getText() +".txt";
-
-
-        QuestionDatabank questionDatabank = new QuestionDatabank();
-        questionDatabank.init();
-        questionDatabank.create();
-
-
+        String fileName = idNumber.getText() + "-" + courseName.getText() + "-" + courseCode.getText() + "-" + testDate.getText() +".json";
+        System.out.println(fileName);
     }
 
 
@@ -70,7 +51,6 @@ public class SetTestController  {
             primaryStage.show();
         }
     }
-    */
-    }
+}
 
 
