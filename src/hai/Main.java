@@ -40,7 +40,7 @@ public class Main extends Application {
         /*Uncomment store(obj, obj) if this is your first time launching without the files (staff.txt, student.txt)*/
         //store(info, info1);
         retrieve(info, info1);
-        //deserializableJson();
+        //RandomJSON();
         launch(args);
 
     }

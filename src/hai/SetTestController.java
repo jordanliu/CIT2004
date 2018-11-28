@@ -1,29 +1,21 @@
 package hai;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class SetTestController{
     @FXML
@@ -38,11 +30,11 @@ public class SetTestController{
     public void setTest(ActionEvent event){
         String fileName = idNumber.getText() + "-" + courseName.getText() + "-" + courseCode.getText() + "-" + testDate.getText() +".json";
         System.out.println(fileName);
-        deserializableJson(fileName);
+        RandomJSON(fileName);
     }
 
 
-    public static void deserializableJson(String filename) {
+    public static void RandomJSON(String filename) {
         Gson gson = new Gson();
 
         try{
