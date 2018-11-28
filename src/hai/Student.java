@@ -10,20 +10,24 @@ public class Student extends User {
     private String address;
     private String contact;
     private String dateEnrolled;
+    private boolean takenTest;
+
 
     public Student() {
         super();
         address = "";
         contact = "";
         dateEnrolled = "";
+        takenTest = false;
 
     }
 
-    public Student(int id, String username, String password, String firstName, String lastName, String address, String contact, String dateEnrolled) {
+    public Student(int id, String username, String password, String firstName, String lastName, String address, String contact, String dateEnrolled, boolean takenTest) {
         super(id, username, password, firstName, lastName);
         this.address = address;
         this.contact = contact;
         this.dateEnrolled = dateEnrolled;
+        this.takenTest = takenTest;
     }
 
     public String getAddress() {
@@ -50,13 +54,21 @@ public class Student extends User {
         this.dateEnrolled = dateEnrolled;
     }
 
+    public boolean isTakenTest() {
+        return takenTest;
+    }
+
+    public void setTakenTest(boolean takenTest) {
+        this.takenTest = takenTest;
+    }
+
     public void display() {
         System.out.println(this);
     }
 
     public String toString() {
         return super.toString() + "Address : "
-                + address + "\n" + "Contact: " + contact + "\n" + "Date Enrolled: " + dateEnrolled + "\n";
+                + address + "\n" + "Contact: " + contact + "\n" + "Date Enrolled: " + dateEnrolled + "\n" + "Taken test: " + takenTest + "\n";
     }
 
     public void store(){
@@ -64,7 +76,7 @@ public class Student extends User {
             FileWriter file = new FileWriter("student.txt", true);
             Staff staff = new Staff();
             String record = "\n" + "\n" + id + "\n"  + username +  "\n"  + password + "\n" + firstName + "\n" + lastName +
-                    "\n" + address + "\n" + contact + "\n" + dateEnrolled;
+                    "\n" + address + "\n" + contact + "\n" + dateEnrolled + "\n" + takenTest ;
             file.write(record);
             file.close();
         } catch (IOException e){
@@ -85,6 +97,8 @@ public class Student extends User {
                 address = sInFile.next();
                 contact = sInFile.next();
                 dateEnrolled = sInFile.next();
+                takenTest = sInFile.nextBoolean();
+                //takenTest = sInFile.nextBoolean();
                 // System.out.println("validate method: " + username + " " + password);
                 if($username.equals(username)){
                     found = 1;
@@ -116,7 +130,8 @@ public class Student extends User {
                 address = sInFile.next();
                 contact = sInFile.next();
                 dateEnrolled = sInFile.next();
-                Staff rec = new Staff(id, username, password, firstName, lastName, address, contact, dateEnrolled);
+                takenTest = sInFile.nextBoolean();
+                Student rec = new Student(id, username, password, firstName, lastName, address, contact, dateEnrolled, takenTest);
                 System.out.println(rec);
             }
             sInFile.close();
