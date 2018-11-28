@@ -131,18 +131,29 @@ public class Staff extends User{
     }
 
     public static void serializableJson(){
-        Questions questions = new Questions(
-         "null",
-         "null"
-        );
+        Questions[] questions = new Questions[2];
+        questions[0] = new Questions("test", "test");
+        questions[1] = new Questions("test", "test");
 
-        Gson gson = new Gson();
-        String json = gson.toJson(questions);
-        System.out.println(json);
+       try{
+           Gson gson = new Gson();
+           String json = gson.toJson(questions);
+           System.out.println(json);
+           File jsonFile = new File("questions.json");
+           jsonFile.createNewFile();
+           FileOutputStream fOut = new FileOutputStream(jsonFile);
+           OutputStreamWriter jsonWriter =new OutputStreamWriter(fOut);
+           jsonWriter.append(json);
+           jsonWriter.close();
+           fOut.close();
+       } catch (IOException e){
+           e.printStackTrace();
+       }
 
     }
 
     public static void deserializableJson(){
         String inputJson = "{'question':'null','answer':'null'}"; }
         //Gson gson = new
+
 }
