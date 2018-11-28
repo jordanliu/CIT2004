@@ -1,5 +1,7 @@
 package hai;
 
+import com.google.gson.Gson;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -127,4 +129,20 @@ public class Staff extends User{
             e.printStackTrace();
         }
     }
+
+    public static void serializableJson(){
+        Questions questions = new Questions(
+         "null",
+         "null"
+        );
+
+        Gson gson = new Gson();
+        String json = gson.toJson(questions);
+        System.out.println(json);
+
+    }
+
+    public static void deserializableJson(){
+        String inputJson = "{'question':'null','answer':'null'}"; }
+        //Gson gson = new
 }

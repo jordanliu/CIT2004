@@ -1,11 +1,17 @@
 package hai;
 
+import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+/*
+* TODO: ADD DEFAULT LOGINS FOR STAFF AND STUDENT
+ */
+import static hai.Staff.serializableJson;
 
 
 public class Main extends Application {
@@ -29,7 +35,7 @@ public class Main extends Application {
         /*Uncomment store(obj, obj) if this is your first time launching without the files (staff.txt, student.txt)*/
         //store(info, info1);
         retrieve(info, info1);
-
+        serializableJson();
         launch(args);
 
     }

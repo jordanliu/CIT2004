@@ -2,7 +2,6 @@ package hai;
 
 import java.io.Serializable;
 
-
     public class Questions implements Serializable {
         String question;
         String answer;
