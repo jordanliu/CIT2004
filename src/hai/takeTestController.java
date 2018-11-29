@@ -39,6 +39,8 @@ public class takeTestController implements Initializable {
     private TextField answer4;
     @FXML
     private TextField answer5;
+    @FXML
+    private Label grade;
 
     int score = 0;
 
@@ -66,8 +68,6 @@ public class takeTestController implements Initializable {
             question3.setText(randomQuestions[2].getQuestion());
             question4.setText(randomQuestions[3].getQuestion());
             question5.setText(randomQuestions[4].getQuestion());
-
-
 
         } catch (Exception e){
             e.printStackTrace();
