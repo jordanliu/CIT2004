@@ -34,6 +34,7 @@ public class SetTestController{
     }
 
 
+    //Randomly gets questions from the question databank (questions.json)
     public static void RandomJSON(String filename) {
         Gson gson = new Gson();
 

@@ -46,6 +46,10 @@ public class takeTestController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        /*
+        *Gets the random questions that were generated from setTest, in this instance "default-default-default-default" is used
+        * as a default to show off functionality.
+         */
 
         try{
             Gson gson = new Gson();
@@ -75,6 +79,8 @@ public class takeTestController implements Initializable {
 
     }
 
+
+    //Check method checks to see which answer is correct by comparing strings
     public void check(javafx.event.ActionEvent event) throws Exception{
         try {
             Gson gson = new Gson();

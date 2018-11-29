@@ -87,26 +87,24 @@ public class Student extends User {
     public boolean validate(String $username, String $password){
         int found = 0;
         try{
-            Scanner sInFile = new Scanner(new File("student.txt"));
-            while(sInFile.hasNext()){
-                id = sInFile.nextInt();
-                username = sInFile.next();
-                password = sInFile.next();
-                firstName = sInFile.next();
-                lastName = sInFile.next();
-                address = sInFile.next();
-                contact = sInFile.next();
-                dateEnrolled = sInFile.next();
-                takenTest = sInFile.nextBoolean();
-                //takenTest = sInFile.nextBoolean();
-                // System.out.println("validate method: " + username + " " + password);
+            Scanner scanner = new Scanner(new File("student.txt"));
+            while(scanner.hasNext()){
+                id = scanner.nextInt();
+                username = scanner.next();
+                password = scanner.next();
+                firstName = scanner.next();
+                lastName = scanner.next();
+                address = scanner.next();
+                contact = scanner.next();
+                dateEnrolled = scanner.next();
+                takenTest = scanner.nextBoolean();
                 if($username.equals(username)){
                     found = 1;
                     //System.out.println("validate method:" + username);
                     break;
                 }
             }
-            sInFile.close();
+            scanner.close();
         } catch (IOException e){
             e.printStackTrace();
         }
@@ -119,22 +117,22 @@ public class Student extends User {
 
     public void retrieve(){
         try{
-            Scanner sInFile = new Scanner(new File("student.txt"));
+            Scanner scanner = new Scanner(new File("student.txt"));
             int id;
-            while(sInFile.hasNext()){
-                id = sInFile.nextInt();
-                username = sInFile.next();
-                password = sInFile.next();
-                firstName = sInFile.next();
-                lastName = sInFile.next();
-                address = sInFile.next();
-                contact = sInFile.next();
-                dateEnrolled = sInFile.next();
-                takenTest = sInFile.nextBoolean();
+            while(scanner.hasNext()){
+                id = scanner.nextInt();
+                username = scanner.next();
+                password = scanner.next();
+                firstName = scanner.next();
+                lastName = scanner.next();
+                address = scanner.next();
+                contact = scanner.next();
+                dateEnrolled = scanner.next();
+                takenTest = scanner.nextBoolean();
                 Student rec = new Student(id, username, password, firstName, lastName, address, contact, dateEnrolled, takenTest);
                 System.out.println(rec);
             }
-            sInFile.close();
+            scanner.close();
         } catch (IOException e){
             e.printStackTrace();
         }

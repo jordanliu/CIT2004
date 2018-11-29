@@ -4,14 +4,12 @@ public class ProgramRecord {
     protected String code;
     protected String name;
     protected int courses;
-    protected Award award;
     protected boolean accreditation;
 
-    public ProgramRecord(String code, String name, int courses, Award award, boolean accreditation) {
+    public ProgramRecord(String code, String name, int courses, boolean accreditation) {
         this.code = code;
         this.name = name;
         this.courses = courses;
-        this.award = award;
         this.accreditation = accreditation;
     }
 
@@ -37,14 +35,6 @@ public class ProgramRecord {
 
     public void setCourses(int courses) {
         this.courses = courses;
-    }
-
-    public Award getAward() {
-        return award;
-    }
-
-    public void setAward(Award award) {
-        this.award = award;
     }
 
     public boolean isAccreditation() {

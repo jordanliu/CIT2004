@@ -1,8 +1,5 @@
 package hai;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,10 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-/*
-* TODO: ADD DEFAULT LOGINS FOR STAFF AND STUDENT
-* TODO: Add master user and pass in documentation
- */
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +26,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        //Creating user objects
         User info = new Staff(1, "jordan", "1234", "Jordan", "Liu", "FENC", "SCIT", "11/12/2018");
         User info1 = new Student(15067007, "rojay", "1234", "Rojay", "White", "FENC", "SCIT", "11/12/2018", false);
 
