@@ -32,15 +32,15 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="621.0">
                <children>
-                  <Label fx:id="question1" layoutX="29.0" layoutY="27.0" prefHeight="30.0" prefWidth="490.0" text="Is this a question? What?!?" />
+                  <Label fx:id="question1" layoutX="29.0" layoutY="27.0" prefHeight="30.0" prefWidth="490.0" text="Please set test with &quot;default&quot; in each text field." />
                   <TextField fx:id="answer1" layoutX="29.0" layoutY="57.0" prefHeight="25.0" prefWidth="568.0" />
-                  <Label fx:id="question2" layoutX="29.0" layoutY="97.0" prefHeight="30.0" prefWidth="490.0" text="Is this a question? What?!?" />
+                  <Label fx:id="question2" layoutX="29.0" layoutY="97.0" prefHeight="30.0" prefWidth="490.0" text="Please set test with &quot;default&quot; in each text field." />
                   <TextField fx:id="answer2" layoutX="29.0" layoutY="127.0" prefHeight="25.0" prefWidth="568.0" />
-                  <Label fx:id="question3" layoutX="29.0" layoutY="167.0" prefHeight="30.0" prefWidth="490.0" text="Is this a question? What?!?" />
+                  <Label fx:id="question3" layoutX="29.0" layoutY="167.0" prefHeight="30.0" prefWidth="490.0" text="Please set test with &quot;default&quot; in each text field." />
                   <TextField fx:id="answer3" layoutX="29.0" layoutY="197.0" prefHeight="25.0" prefWidth="568.0" />
-                  <Label fx:id="question4" layoutX="29.0" layoutY="237.0" prefHeight="30.0" prefWidth="490.0" text="Is this a question? What?!?" />
+                  <Label fx:id="question4" layoutX="29.0" layoutY="237.0" prefHeight="30.0" prefWidth="490.0" text="Please set test with &quot;default&quot; in each text field." />
                   <TextField fx:id="answer4" layoutX="29.0" layoutY="267.0" prefHeight="25.0" prefWidth="568.0" />
-                  <Label fx:id="question5" layoutX="29.0" layoutY="307.0" prefHeight="30.0" prefWidth="490.0" text="Is this a question? What?!?" />
+                  <Label fx:id="question5" layoutX="29.0" layoutY="307.0" prefHeight="30.0" prefWidth="490.0" text="Please set test with &quot;default&quot; in each text field." />
                   <TextField fx:id="answer5" layoutX="29.0" layoutY="337.0" prefHeight="25.0" prefWidth="568.0" />
                   <Button layoutX="256.0" layoutY="389.0" mnemonicParsing="false" onAction="#check" text="Submit Answers" />
                </children></AnchorPane>
